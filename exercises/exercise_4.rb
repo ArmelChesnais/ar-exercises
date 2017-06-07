@@ -22,12 +22,14 @@ Store.create(name: "Yaletown", annual_revenue: 430000, mens_apparel: true, women
 
 @mens_stores = Store.where(mens_apparel: true)
 
+puts "Ex4, added mosre stores, list men's apparel stores:"
 @mens_stores.each do |loc|
   puts loc.name + ", annual revenue: " + loc.annual_revenue.to_s
 end
 
 @womens_stores = Store.where('womens_apparel = true AND annual_revenue < 1000000')
 
+puts "list women's stores less than 1M$ revenue"
 @womens_stores.each do |loc|
   puts loc.name + ", annual revenue: " + loc.annual_revenue.to_s
 end

@@ -10,3 +10,4 @@ puts "----------"
 @store2 = Store.find(2)
 
 @store1.update(name: "Victoria")
+puts "Ex2, updated store name."

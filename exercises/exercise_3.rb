@@ -14,4 +14,5 @@ puts "----------"
 @store3 = Store.find(3)
 @store3.destroy
 
+puts "Ex3, destroy a store, count stores:"
 puts Store.count
