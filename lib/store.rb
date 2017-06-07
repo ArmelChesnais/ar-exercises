@@ -6,9 +6,18 @@ class Store < ActiveRecord::Base
 
   validate :mens_or_womens_apparel
 
+  before_destroy :validate_destroy
+
   def mens_or_womens_apparel
+    # disabled to allow exercise 9 to go through
+
     unless mens_apparel.present? || womens_apparel.present?
       errors.add(:men_or_womens_apparel, "must be true")
     end
+  end
+
+  def validate_destroy
+      false if self.employees.count > 0   # rails 4.0
+      # false if self.employees.count > 0  # rails 5.0+
   end
 end
